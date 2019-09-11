@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <title>Descripto | Welcome</title>
+	 <link rel="stylesheet" href="edit.css">
+	
+
+
+  </head>
+  <body  style=" background-image:url('bg.jpg') ;">
+    <header>
+      <div class="container" >
+        <div id="branding" >
+         <span style="font-size:30px;cursor:pointer; " onclick="openNav()">&#9776; open</span>
+            <a href="https://auto.ndtv.com/hero-bikes/xtreme-200r"><span style="font-size:30px;cursor:pointer; margin-left: 50px"> CarS&BikeS</span></a>
+            <a href="https://www.ktm.com/en/"><span style="font-size:30px;cursor:pointer; margin-left: 50px" >KTM</span></a>
+          </div>
+      </div>
+    </header>
+    <section>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.php">Home</a>
+    <a href="laptop.html">Laptop</a>
+    <a href="mobile.html">Mobile</a>
+    <a href="bike.html">Bike</a>
+</div>
+ <div id="mybignav" class="bignav">
+     <a href="javascript:void(0)" class="closebt" onclick="closebig()">&times;</a>
+    <p id="2" align="center" style="color: #818181; margin-top: 10% ">
+    </p>
+ </div>
+<button onclick="f()" style=" margin-left: 48%;margin-top: 5%;
+            background-color: #f1f1f1;
+            color: black;
+            font-size: 16px;
+            padding: 16px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center; " id="xx" >CLICK</button>
+
+<div class="d" >
+    <ul id="101">
+
+</ul>
+</div>
+</p>
+    </section>
+<script>
+function openNav(x) {
+
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+
+    }
+    function f()
+    {  xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("101").innerHTML = this.responseText;
+            }
+        }
+
+        xmlhttp.open("GET","ktm1.php",true);
+        xmlhttp.send();
+
+
+    }
+
+    function f2(x) {
+        openbig(x);
+
+    }
+       function a(k) {
+
+       {
+             xmlhttp = new XMLHttpRequest();
+
+             xmlhttp.onreadystatechange = function () {
+                 if (this.readyState == 4 && this.status == 200) {
+                     document.getElementById("2").innerHTML = this.responseText;
+                 }
+             }
+
+             xmlhttp.open("GET", "ktm2.php?nm=" + k, true);
+             xmlhttp.send();
+
+         }
+    }
+function openbig(x) {
+    a(x);
+    document.getElementById("mybignav").style.width = "50%";
+    document.getElementById("mybignav").style.height = "70%";
+    document.getElementById("mybignav").style.marginTop = "7%";
+    document.getElementById("mybignav").style.marginLeft = "29%";
+    document.getElementById("mybignav").style.textAlign = "center";
+
+
+
+}
+
+function closebig() {
+    document.getElementById("mybignav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+
+</script>   
+  </body>
+</html>

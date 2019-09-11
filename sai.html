@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<title> cSearch </title>
+<body>
+ <h1> sai  sai</h1>
+ <Button onclick="f1()">click</Button>
+ <p id="login-form"></p>
+ <script>
+     function f1()
+     {
+fetch('https://restcountries.eu/rest/v2/all')
+.then((resp) => resp.json())
+.then(function(data){
+   var myob=data.results;
+   for(x in myob)
+   {
+       document.getElementById("login-form").innerHTML=myob[x];
+   }
+})
+     }
+ </script>
+</body>
+</html>
+

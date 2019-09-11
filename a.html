@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style> .center{
+        margin: auto;
+        margin-top: 200px;
+        padding: 10px;
+        height: 150px;
+        width: 20%;
+        border: 3px solid green;
+    }</style>
+</head>
+<body>
+<div style="">
+<ul>
+ <li>
+XPS:<button value="xps" onclick="fun(this.value)">click </button></br>
+ </li>
+ <li>
+MAC:<button value="mac" onclick="fun(this.value)">click </button>
+ </li>
+</ul></div>
+<p id="12" class="center"></p>
+<script>
+    function fun(s) {
+        xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("12").innerHTML = this.responseText;
+            }
+        }
+
+        xmlhttp.open("GET","b.php?nm="+s,true);
+        xmlhttp.send();
+    }
+
+</script>
+</body>
+</html>

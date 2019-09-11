@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head><style>
+body{
+background-image:url('harley.png') ;
+ background-repeat: no-repeat;
+  background-size: cover;
+ }
+ .button1{
+  background-color:  #555555;
+  color: white;
+  border: 2px solid #555555;
+  border-radius:12px;
+  width:50%;
+  height:50px;
+  margin-left:25%;
+  margin-top:89%;
+}
+
+.button:hover {
+  background-color: white;
+  color:  #555555;cursor:pointer;
+}
+.main{
+position:relative;
+width:250px;
+height:320px;
+}
+.card{
+position:absolute;
+width:100%;
+height:100%;
+transform-style:preserve-3d;
+transition:all 1s ease;
+}
+.card:hover{
+cursor:pointer;
+transform:rotateY(180deg);
+}
+.front{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+border-radius:20px;
+background-color: black;
+}
+.back{
+position:absolute;
+width:100%;
+height:100%;
+transform:rotateY(180deg);
+background-image:url('wood.png');
+background-size:300px 320px;
+border-radius:20px;
+}
+</style></head>
+<body>
+
+ <div class="main" style="margin-left:21%; margin-top:15%; ">
+   <div class="card">
+      <div class="front" style="background-image:url('honda.png') ;
+ background-position:center;
+ background-repeat: no-repeat;
+  background-size: 300px 320px;
+  "></div>
+      <div class="back"> <button class="button button1" onclick="h()">Enter</button></div>
+   </div>
+ </div>
+ <div class="main" style="margin-left:41%; margin-top:-21%; ">
+   <div class="card">
+      <div class="front"style="background-image:url('ktm.png') ;
+ background-position:center; 
+ background-repeat: no-repeat;background-size: 310px 340px;"></div>
+      <div class="back"><button class="button button1" onclick="k()">Enter</button></div>
+   </div>
+ </div>
+  <div class="main" style="margin-left:61%; margin-top:-21%; ">
+   <div class="card">
+      <div class="front"style="background-image:url('harleydavidson.png') ;
+ background-position:center;
+ background-repeat: no-repeat;"></div>
+      <div class="back"><button class="button button1" onclick="hd()">Enter</button></div>
+   </div>
+ </div>
+ <script>
+ 
+function h()
+{
+window.location="bikes.html";
+}
+function hd()
+{
+    window.location="har.html";
+}
+function k()
+{
+    window.location="ktm.html";
+}
+
+</script>
+ 
+</body>
+</html>

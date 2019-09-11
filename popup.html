@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>popup</title>
+    <style>
+        body{
+            background-image:url('dark.jpg') ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color:greenyellow;
+        }
+        .center {
+            margin: auto;
+            margin-top: 200px;
+            margin-left: 10px;
+            padding: 10px;
+            height: 150px;
+            width: 20%;
+            border: 3px solid green;
+            color: wheat;
+            font-size: 35px;
+        }
+        .model{
+            display:none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+        .modal-content{
+            background-color: #fefefe;
+            margin-top: 7%;
+            margin-left: 29%;
+            border: 1px solid #888;
+            width: 50%;
+            height: 70%;
+            padding-bottom:10px ;
+            background-color: wheat;
+
+        }
+        .close
+        {
+            positon: absolute;
+            right:25px;
+            top:0;
+            color:wheat;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        close:hover,.close:focus{
+            color:red;
+            cursor: pointer;
+        }
+        .animate{
+            animation: zoom 0.6s;
+        }
+        @keyframes zoom {
+          from{transform: scale(0)}
+           to{transform: scale(1)}
+
+        }
+    </style>
+</head>
+<body>
+<button onclick="f()" >Gaming</button>
+<p>
+<ul id="101" >
+
+</ul>
+</p>
+<p id="2"></p>
+<button onclick="document.getElementById('model-wrapper').style.display='block'">images</button>
+<div id="model-wrapper" class="model">
+    <div class="modal-content animate" >
+        <img src="cons.jpg" height="200px" width="600px" style="margin-left: 80px ; margin-top: 50px" >
+        <button>click</button>
+
+    </div>
+</div>
+
+
+
+<script>
+   var model=document.getElementById('model-wrapper');
+    window.onclick=function (event) {
+        if(event.target==model)
+        {
+            model.style.display="none";
+        }
+
+    }
+
+
+        function fun(s) {
+            xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("12").innerHTML = this.responseText;
+                }
+            }
+
+            xmlhttp.open("GET","b.php?nm="+s,true);
+            xmlhttp.send();
+        }
+   function f()
+   {  xmlhttp = new XMLHttpRequest();
+
+       xmlhttp.onreadystatechange = function () {
+           if (this.readyState == 4 && this.status == 200) {
+               document.getElementById("101").innerHTML = this.responseText;
+           }
+       }
+
+       xmlhttp.open("GET","demo2.php",true);
+       xmlhttp.send();
+
+
+   }
+
+   function f2(x)
+   {
+       xmlhttp = new XMLHttpRequest();
+
+       xmlhttp.onreadystatechange = function () {
+           if (this.readyState == 4 && this.status == 200) {
+               document.getElementById("2").innerHTML = this.responseText;
+           }
+       }
+
+       xmlhttp.open("GET","b.php?nm="+x,true);
+       xmlhttp.send();
+
+
+   }
+
+</script>
+
+</body>
+</html>
